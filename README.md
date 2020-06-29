@@ -32,6 +32,13 @@ This is the final tidy data txt file. Once saving it to your working directory, 
 data<-read.table("tidydata.txt", header=T)
 ```
 
+If you have problem downloading the txt file, you can try to open it directly with its url address, using the code below:
+```{r}
+address <- "https://raw.githubusercontent.com/ZhaoZ-2020/GettingnCleaningData_Project/master/tidydata.txt"
+address <- sub("^https", "http", address)
+data <- read.table(url(address), header = TRUE) 
+```
+
 It meets the principles of tidy data (from Hadley Wickham’s Tidy Data paper) below:  
 1. Each variable forms a column: there are only 5 columns in my tidy data set and each one of them corresponds to one variable. Refer to CodeBook.md for more details.  
 2. Each observation forms a row: in my tidy data set, one row refers to one mean value of a feature, for one subject under one activity.  
