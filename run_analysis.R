@@ -131,6 +131,6 @@ str(tidydata)
 
 
 ### Write the final tidy data into a txt file.
-write.table(tidydata, "tidydata.txt")
+write.table(tidydata, "tidydata.txt", row.name=FALSE)
 
 

@@ -14,6 +14,13 @@ My tidy data set is stored in the "tidydata.txt" and can be read using the R cod
 data<-read.table("tidydata.txt", header=T)
 ```
 
+This is the alternative way of reading the file
+```{r}
+address <- "https://raw.githubusercontent.com/ZhaoZ-2020/GettingnCleaningData_Project/master/tidydata.txt"
+address <- sub("^https", "http", address)
+data <- read.table(url(address), header = TRUE) 
+```
+
 The data is in long form with 15480 rows and 5 columns. 
 
 There are 30 subjects, 6 activitys and I have extracted 86 features related to  the mean and standard deviation. I have calculated the average of each of the 86 features, for each activity and each subject. Therefore, the data has in total (30 X 6 X 86=15480) rows.

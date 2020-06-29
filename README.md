@@ -227,10 +227,10 @@ head(tidydata)
 str(tidydata)
 ```
 
-The final step is to save the tidy data set (tidydata) in to a txt file.
+The final step is to save the tidy data set (tidydata) in to a txt file. Add in the row.name=FALSE as requested.
 
 ```{r}
-write.table(tidydata, "tidydata.txt")
+write.table(tidydata, "tidydata.txt", row.name=FALSE)
 ```
 
 Please note that, you can simple use the code below to read the tidy data file, but instead of factor you will have Group, Activity and Feature Columns as class = character. 
