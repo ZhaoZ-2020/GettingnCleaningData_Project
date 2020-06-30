@@ -188,7 +188,7 @@ Therefore, I just remove the "()" and change "-" and "," to "_", using the *sub(
 names(data)<-sub("\\()", "", names(data))
 names(data)<-gsub("-|,", "_", names(data))
 names(data)
-```{r}
+```
 
 
 
@@ -206,8 +206,9 @@ meandata<-aggregate(data[,4:dim(data)[2]], by=data[,1:3], mean)
 meandata[1,]
 ```
 
-### Reshape the data into long format so that 
-### the names of the 561 features are in one column named feature
+#Reshape the data into long format
+
+Reshape the data so that the names of the 561 features are in one column named "feature"
 
 I reshape the meandata to long form using *melt()* function in the library **reshape2**, and save the results in a data frame called "tidydata". 
 This tidydata has 15480 rows and 5 columns. It contains the mean values for the 86 features, for each subjects and each activitys, i.e. 86X30X6=15480 rows.
